@@ -5,7 +5,7 @@ import math
 
 plt.rcParams["figure.autolayout"] = True
 
-df = pd.read_csv(r'CircularMotion-main/data/most valuable/3 copters with a constant center/20221217-111008_setpos.csv', header=0, delimiter=';')
+df = pd.read_csv(r'data/3 copters with const centre APF.csv', header=0, delimiter=';')
 
 cols = df.columns
 for col in cols:
@@ -14,11 +14,11 @@ for col in cols:
 print(df.columns)
 
 
-# ax = df.plot(x='i', y=['p_12', 'p_23'])
-# ax.set(xlabel='Time, [ds]', ylabel='Phase shifts, [rad]')
+ax = df.plot(x='i', y=['p12_APF', 'p23'])
+ax.set(xlabel='Time, [ds]', ylabel='Phase shifts, [rad]')
 
-# ax = df.plot(x='i', y=['d_1','d_2', 'd_3'])
-# ax.set(xlabel='Time, [ds]', ylabel='Distances to the center, [m]')
+ax = df.plot(x='i', y=['d_1','d_2', 'd_3'])
+ax.set(xlabel='Time, [ds]', ylabel='Distances to the center, [m]')
 
 
 # fig, axes = plt.subplots(nrows=3, ncols=1)
@@ -33,7 +33,8 @@ print(df.columns)
 
 
 ax = df.plot(x='px_1', y=['py_1'])
-ax.set(xlabel='Time, [ds]', ylabel='Phase shifts, [rad]')
+ax = df.plot(x='px_2', y=['py_2'])
+ax = df.plot(x='px_3', y=['py_3'])
 
 ax=df.plot(x='i', y=['pz_2'])
 ax.set(xlabel='px_1, [m]', ylabel='py_1, [m]')
