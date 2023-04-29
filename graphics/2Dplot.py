@@ -5,7 +5,7 @@ import math
 
 plt.rcParams["figure.autolayout"] = True
 
-df = pd.read_csv(r'data/3 copters with const centre APF.csv', header=0, delimiter=';')
+df = pd.read_csv(r'data/3 copters with constant centre.csv', header=0, delimiter=';')
 
 cols = df.columns
 for col in cols:
@@ -14,8 +14,8 @@ for col in cols:
 print(df.columns)
 
 
-ax = df.plot(x='i', y=['p12_APF', 'p23'])
-ax.set(xlabel='Time, [ds]', ylabel='Phase shifts, [rad]')
+# ax = df.plot(x='i', y=['p12_APF', 'p23'])
+# ax.set(xlabel='Time, [ds]', ylabel='Phase shifts, [rad]')
 
 ax = df.plot(x='i', y=['d_1','d_2', 'd_3'])
 ax.set(xlabel='Time, [ds]', ylabel='Distances to the center, [m]')
