@@ -5,7 +5,7 @@ import math
 
 plt.rcParams["figure.autolayout"] = True
 
-df = pd.read_csv(r'data/Sim_cf/test_high_level_circ3_moving_center_logging1.csv', header=0, delimiter=';')
+df = pd.read_csv(r'data/Sim_cf/sim3_20230610-230139_.csv', header=0, delimiter=';')
 
 cols = df.columns
 for col in cols:
@@ -41,6 +41,14 @@ ax.set(xlabel='Steps', ylabel='Distances to the center, [m]')
 # ax = df.plot(x='i', y=['distance_12'])
 # ax.set(xlabel='Steps', ylabel='Distance between UAVs, [m]')
 
+# ax = df.plot(x='setPx1', y=['setPy1'], x='px_1', y=['py_1'])
+# ax.set(xlabel='x coordinate 1-d copter, [m]', ylabel='y coordinate 1-d copter, [m]')
+
+# ax = df.plot(x='setPx2', y=['setPy2'])
+# ax.set(xlabel='x coordinate 2-d copter, [m]', ylabel='y coordinate 2-d copter, [m]')
+
+# ax = df.plot(x='setPx3', y=['setPy3'])
+# ax.set(xlabel='x coordinate 3-d copter, [m]', ylabel='y coordinate 3-d copter, [m]')
 
 # fig, axes = plt.subplots(nrows=3, ncols=1)
 # ax=df.plot(x='px_1', y=['py_1'], ax=axes[0])

@@ -12,11 +12,11 @@ from cflib.crazyflie.syncCrazyflie import SyncCrazyflie
 timestr = time.strftime("%Y%m%d-%H%M%S")
 fp = open(timestr + '_apf3.csv', 'w')
 
-URI1 = 'radio://0/80/2M/E7E7E7E711'
-URI2 = 'radio://0/80/2M/E7E7E7E712'
-URI3 = 'radio://0/80/2M/E7E7E7E713'
+URI1 = 'radio://0/80/2M/E7E7E7E712'
+URI2 = 'radio://0/80/2M/E7E7E7E713'
+URI3 = 'radio://0/80/2M/E7E7E7E714'
 
-MIN_BAT = 2.8
+MIN_BAT = 2.2
 
 CX = 0
 CY = 0
@@ -120,7 +120,7 @@ def write_log(**log_vars):
 def forward_circle(cf1, cf2, cf3):
     global CX
     global CY
-    steps = 600
+    steps = 30
     for i in range(steps):
 
         # CX += 0.001
@@ -209,7 +209,7 @@ def land(cf1, cf2, cf3, position):
     landing_time = 1.0
     sleep_time = 0.1
     steps = int(landing_time / sleep_time)
-    vz = -position / landing_time
+    vz = -0.3
 
     print(vz)
 
