@@ -18,7 +18,7 @@ URI3 = 'radio://0/80/2M/E7E7E7E714'
 
 MIN_BAT = 2.2
 
-CX = 0
+CX = 0.3
 CY = 0
 k = 5.0
 R = 0.5
@@ -120,7 +120,7 @@ def write_log(**log_vars):
 def forward_circle(cf1, cf2, cf3):
     global CX
     global CY
-    steps = 30
+    steps = 300
     for i in range(steps):
 
         # CX += 0.001
